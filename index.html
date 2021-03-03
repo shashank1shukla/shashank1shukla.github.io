@@ -19,7 +19,7 @@ function capture() {
     /** Code to merge image **/
     /** For instance, if I want to merge a play image on center of existing image **/
     const playImage = new Image();
-    playImage.src = 'path to image asset';
+    playImage.src = 'https://dev-web.rivittv.lan/assets/images/ic-playback-error-large.svg';
     playImage.onload = () => {
       const startX = (video.videoWidth / 2) - (playImage.width / 2);
       const startY = (video.videoHeight / 2) - (playImage.height / 2);
@@ -27,6 +27,7 @@ function capture() {
       canvas.toBlob() = (blob) => {
         const img = new Image();
         img.src = window.URL.createObjectUrl(blob);
+        alert(img.src)
       };
     };
     /** End **/
