@@ -5,19 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vertical Scroll with Video Widget</title>
   <style>
-    /* Style for the video container */
-    .video-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh; /* Set the height of the container to 100% of viewport height */
-    }
+    body {
+  display: flex;
+  justify-content: center; /* Center the widget horizontally */
+  align-items: center; /* Center the widget vertically */
+  height: 100vh; /* Set the height of the body to the full viewport height */
+  margin: 0; /* Remove default margin */
+}
 
-    /* Style for the video */
-    video {
-      max-width: 100%;
-      max-height: 100%;
-    }
+/* Style the widget container */
+.video-container {
+  width: 300px; /* Set the width of the widget */
+  height: calc(100vh / 3); /* Set the height of the widget to one-third of the viewport height */
+  background-color: lightblue; /* Set background color */
+  border: 1px solid #ccc; /* Add border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+/* Style the content inside the widget */
+.widget-content {
+  padding: 20px; /* Add padding */
+  text-align: center; /* Center align text */
+}
   </style>
 </head>
 <body>
