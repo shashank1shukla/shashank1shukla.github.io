@@ -1,65 +1,42 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <script type = "text/javascript">  
-        /*
- * Copyright 2018-2020 ForgeRock AS. All Rights Reserved
- *
- * Use of this code requires a commercial software license with ForgeRock AS.
- * or with one of its affiliates. All use shall be exclusively subject
- * to such license between the licensee and ForgeRock AS.
- */
- function myfunction() {  
-        if (!window.PublicKeyCredential) {
-            document.getElementById('webAuthnOutcome').value = "unsupported";
-            /* document.getElementById("loginButton_0").click(); */
-        }else{
-            document.getElementById('webAuthnOutcome').value = "supported";
-        }
-
-        var publicKey = {
-    challenge: new Int8Array([118, -25, 91, -34, -15, -88, 90, 114, -120, 0, 101, -26, 84, 102, -111, 4, 115, -14, -89, -55, 108, 103, -119, -70, -120, 127, -117, -118, 91, 75, 20, 115]).buffer,
-    // Relying Party:
-    rp: {
-        
-        name: "Unum_CIAM"
-    },
-    // User:
-    user: {
-        id: Uint8Array.from("b2F0aHRlc3Q", function (c) { return c.charCodeAt(0) }),
-        name: "oathtest",
-        displayName: "oathtest"
-    },
-    pubKeyCredParams: [ { "type": "public-key", "alg": -7 }, { "type": "public-key", "alg": -257 } ],
-    attestation: "none",
-    timeout: 60000,
-    excludeCredentials: [],
-    authenticatorSelection: {"userVerification":"preferred","requireResidentKey":true}
-};
-
-navigator.credentials.create({publicKey: publicKey})
-    .then(function (newCredentialInfo) {
-        var rawId = newCredentialInfo.id;
-        var clientData = String.fromCharCode.apply(null, new Uint8Array(newCredentialInfo.response.clientDataJSON));
-        var keyData = new Int8Array(newCredentialInfo.response.attestationObject).toString();
-        document.getElementById('webAuthnOutcome').value = clientData + "::" + keyData + "::" + rawId;
-        document.getElementById("loginButton_0").click();
-    }).catch(function (err) {
-        document.getElementById('webAuthnOutcome').value = "ERROR" + "::" + err;
-        document.getElementById("loginButton_0").click();
-    });
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Scroll with Video Widget</title>
+  <style>
+    /* Style for the video container */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Set the height of the container to 100% of viewport height */
     }
-    </script>
+
+    /* Style for the video */
+    video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
 </head>
-
 <body>
-    <input type="text" id="webAuthnOutcome" value=""/>
-    <button onclick = "myfunction()" >Test</button>
-    <button id="loginButton_0"></button>
+  <!-- Top content -->
+  <div style="height: 1000px; background-color: lightblue;">
+    <h1>This is the top content</h1>
+  </div>
 
+  <!-- Middle content with video widget -->
+  <div class="video-container">
+    <video controls autoplay loop>
+      <source src="your-video-source.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Bottom content -->
+  <div style="height: 1000px; background-color: lightgreen;">
+    <h1>This is the bottom content</h1>
+  </div>
 </body>
-
 </html>
