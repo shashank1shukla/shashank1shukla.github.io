@@ -7,11 +7,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js"></script>
   </head>
   <body>
-  <div style="position: relative; padding-top: 56.20608899297424%;">
-  <video width="352" height="198" controls>
-    <source src="https://customer-igv9pjegnddatwdj.cloudflarestream.com/8d49a1833cd549cb8ae1717f0d1c1bb0/manifest/video.m3u8" type="application/x-mpegURL">
+
+    <!-- CSS  -->
+ <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+
+
+<!-- HTML -->
+<video id='hls-example'  class="video-js vjs-default-skin" width="400" height="300" controls>
+<source type="application/x-mpegURL" src="https://customer-igv9pjegnddatwdj.cloudflarestream.com/8d49a1833cd549cb8ae1717f0d1c1bb0/manifest/video.m3u8">
 </video>
-</div>
+
+
+<!-- JS code -->
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+
+<script>
+var player = videojs('hls-example');
+player.play();
+</script>
+    
 
   </body>
 </html>
